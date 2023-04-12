@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -22,17 +23,136 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+   
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+/*Below is my own CSS*/ 
+/* body {
+ background-color: #232323;
+  margin: 0;
+   
+} */
+
+#stripe{
+  background-color: white;
+  height: 4rem;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  display: flex; 
+  margin: 0.5rem;
+  width: 50rem;
+}   
+
+.reset-btn, .mode, .countdown, .score, span {
+  margin: 0.5rem;
+}
+.countdown {
+  align-items: center;
+}
+
+.game-con {
+  margin: 2rem auto;
+  max-width: 50rem;
+}
+
+.square-con {
+  display: grid;
+  width: 50rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #eee;
+  align-items: center;
+}
+
+.item, .item1, .item2, .item3, .item4, .item5, .item6 {
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: black;
+  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem; 
+}
+#message {
+  font-size: 2rem;
+}
+
+/*Animation of Game Title */
+.animated {
+		color: #3079ed; font-weight:bold; font-size:2em;
+		
+		animation-name: focus-in-contract;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+			
+		/* shorthand
+		animation: focus-in-contract 1s linear 0s 1 normal none;*/
+    
+	}
+	@keyframes focus-in-contract {
+			
+		0% {
+			letter-spacing:1em;
+			filter:blur(12px);
+			opacity:0;
+		}
+		100% {
+			filter:blur(0);
+			opacity:1;
+		}
+	}
+
+/* Animation of game con <h1> box*/  
+ .animated-box {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  width: 60vmin;
+  height: 50vmin;
+  background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-animation: bg-spin 3s linear infinite;
+          animation: bg-spin 3s linear infinite;
+}
+@-webkit-keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+.box:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
